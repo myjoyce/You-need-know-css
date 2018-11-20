@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    main{
+      width: 100%;
+      padding: 60px 80px 80px;
+    }
+    div{
+      width: 209px;
+      margin: 29px auto;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #f4f0ea;
+      /* outline: 5px solid #b4a078; */
+    }
+    input{
+      margin-left: calc(50% - 45px);
+    }
+    input:checked ~ div{
+      box-shadow: 0 0 0 4px #b4a078;
+    }
+  </style>
+<body>
+    <main>
+        <input id="ck" type="checkbox" checked/>
+        <label for="ck">box-shadow</label>
+        <div>A paragraph of filler text. La la la de dah de dah de dah de la.</div>
+      </main>
+</body>
+</html>

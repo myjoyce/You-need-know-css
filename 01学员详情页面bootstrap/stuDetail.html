@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/stuDetail.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <title>学员详情</title>
+  <script>
+    window.onload = function(){
+      var oXbfollow = document.getElementsByClassName("xbfollow")[0];
+      var oXbfollow_img = document.getElementsByClassName("xbfollow_img")[0];
+      var oMainTab = document.getElementsByClassName("mainTab")[0];
+      var oMainTab_lis = oMainTab.getElementsByClassName("mainTab_li");
+      var oHide_shows = oMainTab.getElementsByClassName("hide_show");
+      var oALinkSubs = oMainTab.getElementsByClassName("aLink_sub");
+      var oStu_info_name = document.getElementsByClassName("stu_info_name")[0];
+      var oStu_info_detail = document.getElementsByClassName("stu_info_detail")[0];
+
+      oXbfollow.onclick = function(event){
+        oXbfollow_img.style.display = oXbfollow_img.style.display=="block"?"none":"block";
+        (event || window.event).cancelBubble = "true";
+      }
+      document.onclick = function(){
+        oXbfollow_img.style.display = "none";
+      }
+
+      oStu_info_name.onclick = function(event){
+        oStu_info_detail.style.display = oStu_info_detail.style.display=="block"?"none":"block";
+        (event||window.event).cancelBubble ="true";
+        console.log(oStu_info_detail.style.display)
+      }
+      
+      for(let i = 0;i<oMainTab_lis.length;i++){
+        oMainTab_lis[i].onclick = function(event){
+          var style =  oMainTab_lis[i].getElementsByClassName("hide_show")[0].style;
+          style.display = style.display=="block"?"none":"block";
+          (event||window.event).cancelBubble ="true";
+          for(let j = 0;j<oALinkSubs.length;j++){
+            oALinkSubs[j].onclick = function(event){
+              // this.style.background="white";
+              // this.style.color="rgba(48,64,79,1)";
+            (event||window.event).cancelBubble ="true";//阻止冒泡
+        }
+        } 
+         
+      }
+      
+        // oALink[i].onclick = function(event){
+        //   var style =  oMainTab_lis[i].getElementsByClassName("hide_show")[0].style;
+        //   style.display = style.display;
+        //   (event||window.event).cancelBubble ="true";
+        // }
+      }
+    
+    }
+  </script>
+</head>
+<body>
+  <div class="stu">
+    <div class="asideBar">
+      <div class="logo">
+        <img src="images/logo.png" alt="" class="img_logo">
+      </div>
+      <div class="mainTab">
+        <ul>
+          <li class="mainTab_li">
+            <div class="aLink"> 
+              <img src="images/workbeach.png" alt="" class="mainTab_li_img">
+              <span class="tabText">工作台</span>
+            </div>
+             
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+              <a href="#" class="aLink">
+                <img src="images/enroll.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">招生中心</span>
+              </a>
+            </div>
+            <ul class="hide_show">
+              <li><a href="#" class="aLink_sub">校宝秀</a></li>
+              <li><a href="#" class="aLink_sub">咨询本</a></li>
+              <li><a href="#" class="aLink_sub">营销中心</a></li>
+            </ul>
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink"> 
+              <img src="images/handleCenter.png" alt=""  class="mainTab_li_img">
+              <span class="tabText">办理中心</span>
+            </div>           
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+              <a href="#" class="aLink">
+                <img src="images/teachCenter.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">教务中心</span>
+              </a>
+            </div>
+            <ul class="hide_show">
+              <li><a href="#" class="aLink_sub">学员</a></li>
+              <li><a href="#" class="aLink_sub">班级</a></li>
+              <li><a href="#" class="aLink_sub">一对一</a></li>
+              <li><a href="#" class="aLink_sub">排课</a></li>
+              <li><a href="#" class="aLink_sub">课程表</a></li>
+              <li><a href="#" class="aLink_sub">记上课</a></li>
+              <li><a href="#" class="aLink_sub">磁卡考勤</a></li>
+              <li><a href="#" class="aLink_sub">课程</a></li>
+            </ul>
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+              <a href="#" class="aLink">
+                <img src="images/reportCenter.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">报表中心</span>
+              </a>
+            </div>
+            <ul class="hide_show">
+              <li><a href="#" class="aLink_sub">校区经营分析</a></li>
+              <li><a href="#" class="aLink_sub">教务报表</a></li>
+              <li><a href="#" class="aLink_sub">财务报表</a></li>
+              <li><a href="#" class="aLink_sub">教材杂费报表</a></li>
+            </ul>
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+                <img src="images/xb.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">校宝家</span>
+            </div>
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+              <a href="#" class="aLink">
+                <img src="images/innerM.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">内部管理</span>
+              </a>
+            </div>
+            <ul class="hide_show">
+              <li><a href="#" class="aLink_sub">校区</a></li>
+              <li><a href="#" class="aLink_sub">员工</a></li>
+              <li><a href="#" class="aLink_sub">员工通知</a></li>
+              <li><a href="#" class="aLink_sub">工资</a></li>
+              <li><a href="#" class="aLink_sub">财务</a></li>
+            </ul>
+          </li>
+          <li class="mainTab_li">
+            <div class="aLink">
+                <img src="images/head.png" alt=""  class="mainTab_li_img">
+                <span class="tabText">Molly.Tong</span>
+            </div>
+
+          </li>
+          <li class="mainTab_li">
+            <img src="images/question.png" alt="" class="mainTab_li_img_question">
+            <img src="images/kefu.png" alt="" class="mainTab_li_img_kefu">
+            <img src="images/logout.png" alt="" class="mainTab_li_img_close">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="info">
+      <div class="workbeach">
+        <span class="workbeach_li"><</span>
+        <ul>
+          <li class="workbeach_li">
+            <span class="dot">.</span>
+            <span class="workbeach_li_text">工作台</span>
+          </li>
+          <li class="workbeach_li">
+            <span class="dot">.</span>
+            <span class="workbeach_li_text">学员名字</span>
+            <span class="close">x</span>
+          </li>
+          <li class="workbeach_li">
+            <span class="dotBan">班</span>
+            <span class="workbeach_li_text">编辑：高二政治精英班</span>
+            <span class="close">x</span>
+          </li>
+          <li class="workbeach_li">
+            <span class="dot">.</span>
+            <span class="workbeach_li_text">学员张xx</span>
+            <span class="close">x</span>
+          </li>
+          <li class="workbeach_li">
+            <span class="dotBan">订</span>
+            <span class="workbeach_li_text">41966</span>
+            <span class="close">x</span>
+          <li class="workbeach_li">
+            <span class="dotBan">课</span>
+            <span class="workbeach_li_text">高年级语文</span>
+            <span class="close">x</span>
+          </li>
+          <li class="workbeach_li floatR">
+              <span class="goRight">></span>
+              <span class="close">x</span>
+          </li>
+
+        </ul>
+      </div>
+      <div class="content">
+        <div class="title_info">
+          <ul>
+            <li class="title_info_up">
+              <span class="content_logo">欠</span>
+              账户欠费：650.00元
+              <a href="#" class="addFee">
+                立即补费
+              </a>
+            </li>
+            <li class="title_info_up">
+              <span class="content_logo">积</span>
+              积分总计：650.00分
+            </li>
+            <li class="title_info_up head_up">
+              头像
+              <span class="stu_status">跟进中</span>
+            </li>
+            <li class=" title_info_up title_info_up_FR">
+              <ul>
+                <li class="title_info_up_FR_fl xbfollow">
+                  ☆
+                  <img src="images/xbfollow.png" alt="" class="xbfollow_img">
+                </li>
+                <li class="title_info_up_FR_fl">♡</li>
+                <li class="title_info_up_FR_fl">|</li>
+                <li class="title_info_up_FR_fl">编辑</li>
+                <li class="title_info_up_FR_fl">|</li>
+                <li class="title_info_up_FR_fl">删除</li>
+              </ul>
+            </li>            
+          </ul>
+        </div>
+        <div class="stu_info_name">张艺兴（187-****-2933）▲
+          <div class="stu_info_detail">
+            <span class="trangle">▲</span>
+            <div class="stu_info_detail_up">
+              <ul>
+                <li class="stu_info_detail_li">磁卡卡号</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">20180002987500</li>
+                <li class="stu_info_detail_li">高中学校</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">学校名称学校名称学校名称</li>
+                <li class="stu_info_detail_li">初中学校</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">20180002987500</li>
+                <li class="stu_info_detail_li">小学学校</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">学校名称学校名称学校名称</li>
+              </ul>
+            </div>
+            <div  class="stu_info_detail_down">
+              <ul>
+                <li class="stu_info_detail_li">保险</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">20180002987500</li>
+                <li class="stu_info_detail_li">家长姓名</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">家长名字</li>
+                <li class="stu_info_detail_li">自定义</li>
+                <li class="stu_info_detail_li stu_info_detail_li_content">文本内容</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="stu_tab">
+          <ul>
+            <li class="stu_tab_li">沟通互动</li>
+            <li class="stu_tab_li">订单</li>
+            <li class="stu_tab_li current">课程</li>
+            <li class="stu_tab_li">课程表</li>
+            <li class="stu_tab_li">上课记录</li>
+            <li class="stu_tab_li">成绩</li>
+            <li class="stu_tab_li">文件夹</li>
+            <li class="stu_tab_li">学员账户</li>
+            <li class="stu_tab_li">积分</li>
+            <li class="stu_tab_li">操作日志</li>
+          </ul>
+          <input class="signBtn" type="button" value="报名">
+        </div>
+        
+        <div class="lesson lessonup">
+          <div class="lesson_title">
+            <ul>
+              <li class="lesson_title_name">
+                <span class="lesson_type">按课时</span>
+                课程名称文本名称文本（西湖校区）
+              </li>
+              <li class="lesson_title_name_fR">
+                <ul>
+                  <li class="lesson_title_todo_fR_fL ">
+                      停课日期：2018-09-10
+                    </li>
+                    <li class="lesson_title_todo_fR_fL">
+                      已停15天
+                    </li>
+                    <li class="lesson_title_todo_fR_fL">
+                      <input type="button" class="lesson_title_todo_button" value="复课">
+                    </li>
+                    <li class="lesson_title_todo_fR_fL">
+                        <input type="button" class="lesson_title_todo_button" value="转课">
+                    </li>
+                    <li class="lesson_title_todo_fR_fL">
+                        <input type="button" class="lesson_title_todo_button" value="退课">
+                    </li>
+                    <li class="lesson_title_todo_fR_fL">
+                        <input type="button" class="lesson_title_todo_button" value="结课">
+                    </li>
+                </ul>
+              </li>          
+            </ul>
+          </div>
+          <div class="lesson_info">
+            <div class="lesson_info_left">
+              <ul>
+                <li class="lesson_info_left_li">
+                  <div class="sign_date">报名时间</div>
+                  <div class="sign_date_info">2018-01-20</div>
+                </li>
+                <li class="lesson_info_left_li">
+                    <div class="sign_date">剩余课时</div>
+                    <div class="sign_date_info">190.00（总计200.00）</div>
+                    <div class="set_date">设置有效期</div>
+                </li>
+                <li class="lesson_info_left_li">
+                    <div class="sign_date">剩余学费</div>
+                    <div class="sign_date_info">950.00(总计1200.00)</div>
+                    <div class="set_date">查看</div>
+                </li>
+              </ul>
+            </div>
+            <div class="lesson_info_table">
+              <table style="width:785px;table-layout: fixed;border:1px solid #D4DFE5;"> 
+                <tr style="background: #F6F9FE;height:40px;border-bottom:1px solid #D4DFE5;line-height:40px;">
+                  <th style="width:79px">状态</th>
+                  <th style="width:357px;text-align:left;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">班级名称</span></th>
+                  <th style="width:114px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">教师</span></th>
+                  <th style="width:115px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">开班日期</span></th>
+                  <th style="width:124px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:40px;">已用课时</span></th>
+                </tr>
+                <tr style="height:40px;line-height: 40px;border-bottom:1px solid #D4DFE5;">
+                  <td><span class="status_stop">停课</span></td>
+                  <td class="tooLong" style="text-align: left;">班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称</td>
+                  <td style="width:114px;padding-left:40px;">教师名字</td>
+                  <td style="width:115px;padding-left:20px;">2018-01-20</td>
+                  <td style="width:124px;padding-left:60px;">10.00</td>
+                </tr>
+                <tr style="height:40px;"><td colspan="5"> </td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="lesson">
+            <div class="lesson_title">
+              <ul>
+                <li class="lesson_title_name">
+                  <span class="lesson_type">按课时</span>
+                  课程名称文本名称文本（西湖校区）
+                </li>
+                <li class="lesson_title_name_fR">
+                  <ul>
+                    <li class="lesson_title_todo_fR_fL ">
+                        停课日期：2018-09-10
+                      </li>
+                      <li class="lesson_title_todo_fR_fL">
+                        已停15天
+                      </li>
+                      <li class="lesson_title_todo_fR_fL">
+                        <input type="button" class="lesson_title_todo_button" value="复课">
+                      </li>
+                      <li class="lesson_title_todo_fR_fL">
+                          <input type="button" class="lesson_title_todo_button" value="转课">
+                      </li>
+                      <li class="lesson_title_todo_fR_fL">
+                          <input type="button" class="lesson_title_todo_button" value="退课">
+                      </li>
+                      <li class="lesson_title_todo_fR_fL">
+                          <input type="button" class="lesson_title_todo_button" value="结课">
+                      </li>
+                  </ul>
+                </li>          
+              </ul>
+            </div>
+            <div class="lesson_info">
+              <div class="lesson_info_left">
+                <ul>
+                  <li class="lesson_info_left_li">
+                    <div class="sign_date">报名时间</div>
+                    <div class="sign_date_info">2018-01-20</div>
+                  </li>
+                  <li class="lesson_info_left_li">
+                      <div class="sign_date">剩余课时</div>
+                      <div class="sign_date_info">190.00（总计200.00）</div>
+                      <div class="set_date">设置有效期</div>
+                  </li>
+                  <li class="lesson_info_left_li">
+                      <div class="sign_date">剩余学费</div>
+                      <div class="sign_date_info">950.00(总计1200.00)</div>
+                      <div class="set_date">查看</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="lesson_info_table">
+                <div class="no_class">
+                  <span class="icon">☹</span>
+                  该课程未分班
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lesson">
+              <div class="lesson_title">
+                <ul>
+                  <li class="lesson_title_name">
+                    <span class="lesson_type">按课时</span>
+                    课程名称文本名称文本（西湖校区）
+                  </li>
+                  <li class="lesson_title_name_fR">
+                    <ul>
+                      <li class="lesson_title_todo_fR_fL ">
+                          停课日期：2018-09-10
+                        </li>
+                        <li class="lesson_title_todo_fR_fL">
+                          已停15天
+                        </li>
+                        <li class="lesson_title_todo_fR_fL">
+                          <input type="button" class="lesson_title_todo_button" value="复课">
+                        </li>
+                        <li class="lesson_title_todo_fR_fL">
+                            <input type="button" class="lesson_title_todo_button" value="转课">
+                        </li>
+                        <li class="lesson_title_todo_fR_fL">
+                            <input type="button" class="lesson_title_todo_button" value="退课">
+                        </li>
+                        <li class="lesson_title_todo_fR_fL">
+                            <input type="button" class="lesson_title_todo_button" value="结课">
+                        </li>
+                    </ul>
+                  </li>          
+                </ul>
+              </div>
+              <div class="lesson_info">
+                <div class="lesson_info_left">
+                  <ul>
+                    <li class="lesson_info_left_li">
+                      <div class="sign_date">报名时间</div>
+                      <div class="sign_date_info">2018-01-20</div>
+                    </li>
+                    <li class="lesson_info_left_li">
+                        <div class="sign_date">剩余课时</div>
+                        <div class="sign_date_info">190.00（总计200.00）</div>
+                        <div class="set_date">设置有效期</div>
+                    </li>
+                    <li class="lesson_info_left_li">
+                        <div class="sign_date">剩余学费</div>
+                        <div class="sign_date_info">950.00(总计1200.00)</div>
+                        <div class="set_date">查看</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="lesson_info_table">
+                  <table style="width:785px;table-layout: fixed;border:1px solid #D4DFE5;"> 
+                    <tr style="background: #F6F9FE;height:40px;border-bottom:1px solid #D4DFE5;line-height:40px;">
+                      <th style="width:79px">状态</th>
+                      <th style="width:357px;text-align:left;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">班级名称</span></th>
+                      <th style="width:114px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">教师</span></th>
+                      <th style="width:115px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">开班日期</span></th>
+                      <th style="width:124px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:40px;">已用课时</span></th>
+                    </tr>
+                    <tr style="height:40px;line-height: 40px;border-bottom:1px solid #D4DFE5;">
+                      <td><span class="status_out">转出</span></td>
+                      <td class="tooLong" style="text-align: left;">班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称</td>
+                      <td style="width:114px;padding-left:40px;">教师名字</td>
+                      <td style="width:115px;padding-left:20px;">2018-01-20</td>
+                      <td style="width:124px;padding-left:60px;">10.00</td>
+                    </tr>
+                    <tr style="height:40px;"><td colspan="5"> </td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="lesson">
+                <div class="lesson_title">
+                  <ul>
+                    <li class="lesson_title_name">
+                      <span class="lesson_type">按课时</span>
+                      课程名称文本名称文本（西湖校区）
+                    </li>
+                    <li class="lesson_title_name_fR">
+                      <ul>
+                        <li class="lesson_title_todo_fR_fL ">
+                            停课日期：2018-09-10
+                          </li>
+                          <li class="lesson_title_todo_fR_fL">
+                            已停15天
+                          </li>
+                          <li class="lesson_title_todo_fR_fL">
+                            <input type="button" class="lesson_title_todo_button" value="复课">
+                          </li>
+                          <li class="lesson_title_todo_fR_fL">
+                              <input type="button" class="lesson_title_todo_button" value="转课">
+                          </li>
+                          <li class="lesson_title_todo_fR_fL">
+                              <input type="button" class="lesson_title_todo_button" value="退课">
+                          </li>
+                          <li class="lesson_title_todo_fR_fL">
+                              <input type="button" class="lesson_title_todo_button" value="结课">
+                          </li>
+                      </ul>
+                    </li>          
+                  </ul>
+                </div>
+                <div class="lesson_info">
+                  <div class="lesson_info_left">
+                    <ul>
+                      <li class="lesson_info_left_li">
+                        <div class="sign_date">报名时间</div>
+                        <div class="sign_date_info">2018-01-20</div>
+                      </li>
+                      <li class="lesson_info_left_li">
+                          <div class="sign_date">剩余课时</div>
+                          <div class="sign_date_info">190.00（总计200.00）</div>
+                          <div class="set_date">设置有效期</a></div>
+                      </li>
+                      <li class="lesson_info_left_li">
+                          <div class="sign_date">剩余学费</div>
+                          <div class="sign_date_info">950.00(总计1200.00)</div>
+                          <div class="set_date">查看</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lesson_info_table">
+                    <table style="width:785px;table-layout: fixed;border:1px solid #D4DFE5;"> 
+                      <tr style="background: #F6F9FE;height:40px;border-bottom:1px solid #D4DFE5;line-height:40px;">
+                        <th style="width:79px">状态</th>
+                        <th style="width:357px;text-align:left;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">班级名称</span></th>
+                        <th style="width:114px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">教师</span></th>
+                        <th style="width:115px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:10px;">开班日期</span></th>
+                        <th style="width:124px;"><span style="height:20px;border-left:1px solid #D4DFE5;padding-left:40px;">已用课时</span></th>
+                      </tr>
+                      <tr style="height:40px;line-height: 40px;border-bottom:1px solid #D4DFE5;">
+                        <td><span class="status_finish">结课</span></td>
+                        <td class="tooLong" style="text-align: left;">班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称</td>
+                        <td style="width:114px;padding-left:40px;">教师名字</td>
+                        <td style="width:115px;padding-left:20px;">2018-01-20</td>
+                        <td style="width:124px;padding-left:60px;">10.00</td>
+                      </tr>
+                      <tr style="height:40px;"><td colspan="5"> </td></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
