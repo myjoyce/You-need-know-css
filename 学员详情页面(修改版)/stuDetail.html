@@ -14,12 +14,58 @@
     window.onload = function(){
       var oXbfollow = document.getElementsByClassName("xbfollow")[0];
       var oXbfollow_img = document.getElementsByClassName("xbfollow_img")[0];
+      var oStu_info_name = document.getElementsByClassName("stu_info_name")[0];
+      var oStu_info_detail = document.getElementsByClassName("stu_info_detail")[0];
       var oMainTab = document.getElementsByClassName("mainTab")[0];
       var oMainTab_lis = oMainTab.getElementsByClassName("mainTab_li");
       var oHide_shows = oMainTab.getElementsByClassName("hide_show");
       var oALinkSubs = oMainTab.getElementsByClassName("aLink_sub");
-      var oStu_info_name = document.getElementsByClassName("stu_info_name")[0];
-      var oStu_info_detail = document.getElementsByClassName("stu_info_detail")[0];
+
+
+      oMainTab.onclick = function(ev){
+        var ev = ev || window.event;
+        var target = ev.target || ev.srcElement;
+        while(target !== oMainTab ){
+            if(target.tagName.toLowerCase() == 'li'){
+                break;
+            }
+            target = target.parentNode;
+        }
+        if(target.nodeName.toLowerCase() == 'li'){
+          var style =  target.getElementsByClassName("hide_show")[0].style;
+          style.display = style.display=="block"?"none":"block";
+          if(style.display=="block"){
+            this.className += ' dropup'; //在原来的后面加这个
+          }
+         else{
+           this.className = "mainTab_li"
+         }
+          // (event||window.event).cancelBubble ="true";
+          for(let j = 0;j<oALinkSubs.length;j++){
+            oALinkSubs[j].onclick = function(event){
+            //(event||window.event).cancelBubble ="true";阻止冒泡
+        }
+        } 
+        }
+      }
+      // for(let i = 0;i<oMainTab_lis.length;i++){
+      //   oMainTab_lis[i].onclick = function(event){
+      //     var style =  oMainTab_lis[i].getElementsByClassName("hide_show")[0].style;
+      //     style.display = style.display=="block"?"none":"block";
+      //     if(style.display=="block"){
+      //       this.className += ' dropup'; //在原来的后面加这个
+      //     }
+      //    else{
+      //      this.className = "mainTab_li"
+      //    }
+      //     (event||window.event).cancelBubble ="true";
+      //     for(let j = 0;j<oALinkSubs.length;j++){
+      //       oALinkSubs[j].onclick = function(event){
+      //       (event||window.event).cancelBubble ="true";//阻止冒泡
+      //   }
+      //   }         
+      // }
+      // } 
 
       oXbfollow.onclick = function(event){
         oXbfollow_img.style.display = oXbfollow_img.style.display=="block"?"none":"block";
@@ -46,34 +92,6 @@
         }
         (event||window.event).cancelBubble ="true";
         console.log(oStu_info_detail.style.display)
-      }
-      
-      for(let i = 0;i<oMainTab_lis.length;i++){
-        oMainTab_lis[i].onclick = function(event){
-          var style =  oMainTab_lis[i].getElementsByClassName("hide_show")[0].style;
-          style.display = style.display=="block"?"none":"block";
-          if(style.display=="block"){
-            this.className += ' dropup'; //在原来的后面加这个
-          }
-         else{
-           this.className = "mainTab_li"
-         }
-          (event||window.event).cancelBubble ="true";
-          for(let j = 0;j<oALinkSubs.length;j++){
-            oALinkSubs[j].onclick = function(event){
-              // this.style.background="white";
-              // this.style.color="rgba(48,64,79,1)";
-            (event||window.event).cancelBubble ="true";//阻止冒泡
-        }
-        } 
-         
-      }
-      
-        // oALink[i].onclick = function(event){
-        //   var style =  oMainTab_lis[i].getElementsByClassName("hide_show")[0].style;
-        //   style.display = style.display;
-        //   (event||window.event).cancelBubble ="true";
-        // }
       }
     
     }
@@ -166,7 +184,7 @@
               <ul class="hide_show">
                 <li><a href="#" class="aLink_sub">校区</a></li>
                 <li><a href="#" class="aLink_sub">员工</a></li>
-                <li><a href="#" class="aLink_sub">员工通知</a></>
+                <li><a href="#" class="aLink_sub">员工通知</a></li>
                 <li><a href="#" class="aLink_sub">工资</a></li>
                 <li><a href="#" class="aLink_sub">财务</a></li>
               </ul>
