@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .lesson{
+            display:flex; 
+            height:118px;
+            /* width:500px; */
+            /*justify-content: space-between;元素中间用空格排开，默认横排*/
+            flex-direction: column;/*竖向排列*/
+            /*align-items: center;将纵轴移到中间*/
+            /*align-items:flex-end;将纵轴移到右侧*/
+        }
+        .top{
+            background: peru;
+            flex:1;
+            height:20px;
+        }
+        .lesson_info{
+            display: flex;
+        }
+        .lesson_info_left{
+            width:200px;
+            background: rgb(64, 49, 131);
+        }
+        .lesson_info_table{
+            flex:1;
+            background: rgb(16, 199, 153);
+            display: flex;
+        }
+        table{
+            flex:1;
+        }
+        th{
+            flex:1;
+            background: red;
+        }
+        .tooLong{
+            min-width:600px;
+            white-space:nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis; 
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson">
+        <div class="top">123</div>
+        <div class="lesson_info">
+            <div class="lesson_info_left">
+                <ul>
+                        <li class="lesson_info_left_li">
+                          <div class="sign_date">报名时间</div>
+                          <div class="sign_date_info">2018-01-20</div>
+                        </li>
+                        <li class="lesson_info_left_li">
+                            <div class="sign_date">剩余课时</div>
+                            <div class="sign_date_info">190.00（总计200.00）</div>
+                        </li>
+                </ul>
+            </div>
+            <div class="lesson_info_table">
+              <table style="table-layout: fixed;"> 
+                <tr>
+                    <th style="flex:0 0 20%;"><span>状态</span></th>
+                    <th style="flex:0 0 40%;"><span>班级名称</span></th>
+                    <th style="flex:0 0 10%;"><span>教师</span></th>
+                    <th style="flex:0 0 10%;"><span>开班日期</span></th>
+                    <th style="flex:0 0 20%;"><span>已用课时</span></th>
+                </tr>
+                <tr>
+                    <td><span>停课</span></td>
+                    <td class="tooLong">班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称班级名称</td>
+                    <td>教师名字</td>
+                    <td>2018-01-20</td>
+                    <td>10.00</td>
+                </tr>
+                <tr style="height:40px;"><td colspan="5"> </td></tr>
+               </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
