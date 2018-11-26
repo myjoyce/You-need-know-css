@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo{
+            display: flex;
+            flex-direction: column;
+        }
+        .demo div{
+            flex:1;
+        }
+        .body{
+            display: flex;
+        }
+        .header,.footer,.left,.right{
+            flex:0 0 20%!important;
+        }
+        .header, .footer{
+            background: #73637f;
+        }
+        .left{
+            background: gray;
+        }
+        .center{
+            background: green;
+        }
+        .right{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="header">头部</div>
+        <div class="body">
+            <div class="left">left</div>
+            <div class="center">center</div>
+            <div class="right">right</div>
+        </div>
+        <div class="footer">底部</div>
+    </div>
+</body>
+</html>
