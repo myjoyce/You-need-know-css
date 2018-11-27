@@ -1,24 +1,20 @@
 .stu{
-  /* min-width: 1400px; */
-  height:1200px;
-  /* width:100%; */
   background: #F1F3F4;
 }
 
 .asideBar{
   background: #263F5F;
-  /* max-height:506px; */
+  height:100%;
   position: fixed;
   width: 140px;
   bottom: 0;
   top: 0;
   z-index: 12;
-  /* max-height: 539px; */
-  /* overflow: hidden; */
   overflow: auto;
-  /* overflow-y:hidden; */
+  display: flex;
+  flex-direction: column;/*竖向排列*/
 }
-/* ::-webkit-scrollbar{width:0px} */
+::-webkit-scrollbar{width:0px}
 .logo{
   height:60px;
   position: relative;
@@ -30,6 +26,8 @@
 .mainTab{
   width:140px;
   overflow: hidden;
+  flex:1;
+  align-self: flex-start;
   /* height: 506px; */
 }
 /* .nav{
@@ -44,6 +42,7 @@
     height: 70px;
     background: #263f5f;
     padding: 0px -5px;
+    align-self: flex-end;
 }
 .mainTab_li{
   /* height:40px; */
@@ -317,7 +316,7 @@ ul:after{
 }
 .stu_info_name_per{
   position: relative;
-  left:2%;
+  left:0%;
 }
 .stu_info_name .caret{
   position: absolute;
@@ -340,9 +339,11 @@ ul:after{
 } */
 .trangle{
   position: absolute;
-  left:52%;
-  top:-14px;
-  color:white;
+  left: 0;
+  top: -14px;
+  color: white;
+  right: 0;
+  margin: auto;
 }
 
 .stu_info_detail_li{
